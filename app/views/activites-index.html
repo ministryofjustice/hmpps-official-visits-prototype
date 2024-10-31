@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Official visits prototype
+{% endblock %}
+
+{% block header %}
+{% set page = '/' %}
+{% include './includes/proto-header.html' %}
+
+<div class="app-masthead">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-3">
+          Official visits prototype
+        </h1>
+        <div class="app-masthead__description">
+          <p class="govuk-body-l">
+            A prototype for the Activities Management project, which inlcudes create and allocate, unlock and attend,
+            and appointments management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-font-size-27">
+      Services
+    </h2>
+  </div>
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a href="/create" class="govuk-link--no-visited-state">Create and allocate</a>
+    </h3>
+    <p class="govuk-body">
+      A collection of services for prison staff to create and allocate activities to prisoners.
+    </p>
+  </section>
+
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a href="/unlock" class="govuk-link--no-visited-state">Unlock and attend</a>
+    </h3>
+    <p class="govuk-body">
+      A collection of services for prison staff to help with unlocking prisoners and managing attendance.
+    </p>
+  </section>
+
+  <section class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">
+      <a href="/appointments" class="govuk-link--no-visited-state">Appointments</a>
+    </h3>
+    <p class="govuk-body">
+      A service within Digital Prison Services for prison staff to manage appointments.
+    </p>
+  </section>
+</div>
+{% endblock %}

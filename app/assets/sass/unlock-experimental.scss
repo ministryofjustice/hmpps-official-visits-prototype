@@ -1,0 +1,348 @@
+// expanding table rows
+table.expanding-rows {
+  tr{
+    display:flex;
+    flex-flow:row wrap;
+  }
+  td, th{
+    flex: 1;
+  }
+  th:last-child{
+
+  }
+  td:last-child[hidden] {
+    display: none;
+  }
+  td:last-child {
+    // background: govuk-colour('light-grey');
+    // padding: govuk-spacing(4) govuk-spacing(2);
+    padding: govuk-spacing(4) 0;
+    flex: 1 1 100%;
+  }
+}
+
+
+table.expanding-rows-2 {
+  margin: 1em 0;
+  border-collapse: collapse;
+
+  caption {
+    text-align: left;
+    font-style: italic;
+    padding: 0.25em 0.5em 0.5em 0.5em;
+  }
+
+  th,
+  td {
+    padding: 0.25em 0.5em 0.25em 1em;
+    vertical-align: text-top;
+    text-align: left;
+    text-indent: -0.5em;
+  }
+
+  th {
+    vertical-align: bottom;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .row td:nth-of-type(2), .cell td:nth-of-type(3) {
+    font-style: italic;
+  }
+
+  .row th:nth-of-type(3),
+  .row td:nth-of-type(3),
+  .cell th:nth-of-type(4),
+  .cell td:nth-of-type(4) {
+    text-align: right;
+  }
+
+  td[colspan] {
+    background-color: #eee;
+    color: #000;
+    font-weight: normal;
+    font-style: italic;
+    padding: 0;
+    text-indent: 0;
+  }
+
+  tr.shown, tr.hidden {
+    background-color: #eee;
+    display: table-row;
+  }
+
+  tr.hidden {
+    display: none;
+  }
+
+  .row button {
+    background-color: transparent;
+    border: .1em solid transparent;
+    font: inherit;
+    padding: 0.25em 0.5em 0.25em .25em;
+    width: 100%;
+    text-align: left;
+  }
+
+  .row button:focus, .row button:hover {
+    background-color: #ddd;
+    outline: .2em solid #00f;
+  }
+
+  .row button svg {
+    width: .8em;
+    height: .8em;
+    margin: 0 0 -.05em 0;
+    fill: #66f;
+    transition: transform 0.25s ease-in;
+    transform-origin: center 45%;
+  }
+
+  .row button:hover svg,
+  .row button:focus svg {
+    fill: #00c;
+  }
+
+  /* Lean on programmatic state for styling */
+  .row button[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  .cell button {
+    font-size: 60%;
+    color: #000;
+    background-color: #00f;
+    padding: 0.3em 0.2em 0 0.2em;
+    border: 0.2em solid #00f;
+    border-radius: 50%;
+    line-height: 1;
+    text-align: center;
+    text-indent: 0;
+    transform: rotate(270deg);
+  }
+
+  .cell button svg {
+    width: 1.25em;
+    height: 1.25em;
+    fill: #fff;
+    transition: transform 0.25s ease-in;
+    transform-origin: center 45%;
+  }
+
+  .cell button:hover,
+  .cell button:focus {
+    background-color: #fff;
+    outline: none;
+  }
+
+  .cell button:hover svg,
+  .cell button:focus svg {
+    fill: #00f;
+  }
+
+  /* Lean on programmatic state for styling */
+  .cell button[aria-expanded="true"] svg {
+    transform: rotate(90deg);
+  }
+
+  /* Proven method to visually hide something but */
+  /* still make it available to assistive technology */
+  .visually-hidden {
+    position: absolute;
+    top: auto;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+  }
+}
+
+// .app-checkbox-tags {
+//   .govuk-checkboxes__item {
+//     padding-left: 15px;
+//     display: inline-block;
+//     float: none;
+//     background: govuk-colour("white");
+
+//     &:hover {
+//       .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label:before {
+//         box-shadow: none;
+//       }
+//     }
+
+//     .govuk-checkboxes__input:checked + .govuk-checkboxes__label:before {
+//       z-index: 1;
+//       background-color: #888;
+//     }
+
+//     .govuk-checkboxes__label {
+//       &:before {
+//         width: 100%;
+//         height: 100%;
+//         top: 0;
+//         z-index: -3;
+//       }
+//       &:after {
+//         z-index: 0;
+//         left: 12px;
+//         top: 16px;
+//       }
+//     }
+//   }
+// }
+
+.app-checkbox-tags {
+  .govuk-fieldset__legend {
+    // min-width: 160px;
+    // width: 20%;
+    // float: left;
+  }
+
+  .govuk-checkboxes {
+    // margin-left: 10px;
+    // width: 60%;
+    // float: left;
+  }
+
+  .govuk-checkboxes__item {
+    display: inline-block;
+    float: none;
+    margin-right: govuk-spacing(4);
+    margin-bottom: govuk-spacing(2);
+
+    &:hover {
+      .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label:before {
+        box-shadow: none;
+      }
+      .govuk-checkboxes__input + .govuk-checkboxes__label {
+        box-shadow: 0 0 0 10px #b1b4b6;
+      }
+    }
+
+    .govuk-checkboxes__input {
+      & + .govuk-checkboxes__label {
+        padding: 6px 12px 8px 0px;
+        $lefty: 45px;
+        padding-left: $lefty;
+        margin-left: - ($lefty);
+        border: 2px solid transparent;
+
+        &:before {
+          top: 7px
+        }
+        &:after {
+          top: 14px
+        }
+      }
+
+      &:checked {
+        & + .govuk-checkboxes__label {
+          background-color: govuk-colour('white');
+          $lefty: 45px;
+          padding-left: $lefty;
+          margin-left: - ($lefty);
+          outline: 2px solid govuk-colour('black');
+        }
+
+        &:focus {
+          box-shadow: none;
+
+          & + .govuk-checkboxes__label {
+            border: 2px solid govuk-colour('black');
+            outline: 3px solid transparent;
+            outline-offset: 0px;
+            box-shadow: 0 0 0 3px #ffdd00;
+
+            &:before {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+
+      .govuk-checkboxes__label {
+        &:before {}
+        &:after {}
+      }
+    }
+  }
+}
+
+
+
+
+// Blue button variables
+$button-shadow-size: 2px;
+$govuk-blue-button-colour: govuk-colour('blue');
+$govuk-blue-button-hover-colour: govuk-shade($govuk-blue-button-colour, 20%);
+$govuk-blue-button-shadow-colour: govuk-shade($govuk-blue-button-colour, 60%);
+$govuk-blue-button-text-colour: govuk-colour("white");
+.govuk-button--blue {
+  background-color: $govuk-blue-button-colour;
+  box-shadow: 0 $button-shadow-size 0 $govuk-blue-button-shadow-colour;
+
+  &,
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $govuk-blue-button-text-colour;
+  }
+
+    // alphagov/govuk_template includes a specific a:link:focus selector
+    // designed to make unvisited links a slightly darker blue when focussed, so
+    // we need to override the text colour for that combination of selectors so
+    // so that unvisited links styled as buttons do not end up with dark blue
+    // text when focussed.
+    // @include govuk-compatibility(govuk_template) {
+    //   &:link:focus {
+    //     color: $govuk-blue-button-text-colour;
+    //   }
+    // }
+
+    &:hover {
+      background-color: $govuk-blue-button-hover-colour;
+
+      &[disabled] {
+        background-color: $govuk-blue-button-colour;
+      }
+    }
+  }
+  $govuk-white-button-colour: govuk-colour("white");
+  $govuk-white-button-hover-colour: lighten(govuk-colour('blue'), 50%);
+  $govuk-white-button-shadow-colour: govuk-shade(govuk-colour('blue'), 50%);
+  $govuk-white-button-text-colour: govuk-shade(govuk-colour('blue'), 50%);
+  .govuk-button--white {
+    background-color: $govuk-white-button-colour;
+    box-shadow: 0 $button-shadow-size 0 $govuk-white-button-shadow-colour;
+
+    &,
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+      color: $govuk-white-button-text-colour;
+    }
+
+    // alphagov/govuk_template includes a specific a:link:focus selector
+    // designed to make unvisited links a slightly darker white when focussed, so
+    // we need to override the text colour for that combination of selectors so
+    // so that unvisited links styled as buttons do not end up with dark white
+    // text when focussed.
+    // @include govuk-compatibility(govuk_template) {
+    //   &:link:focus {
+    //     color: $govuk-white-button-text-colour;
+    //   }
+    // }
+
+    &:hover {
+      background-color: $govuk-white-button-hover-colour;
+
+      &[disabled] {
+        background-color: $govuk-white-button-colour;
+      }
+    }
+  }

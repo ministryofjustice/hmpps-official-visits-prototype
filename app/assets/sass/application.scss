@@ -1,6 +1,200 @@
-//
-// For guidance on how to add CSS and SCSS see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+// override the default page width
+$govuk-page-width: 1170px; // DPS currently 1170px
+$moj-page-width: $govuk-page-width;
 
-// Add extra styles here
+$moj-images-path: "/public/images/";
+
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "components/app-masthead";
+@import "components/dps-header";
+@import "components/cards";
+@import "components/option-select";
+@import "components/option-select-v2";
+@import "components/jquery.modal";
+@import "components/checkbox-dropdown.scss";
+@import "components/autocomplete.scss";
+@import "components/app-attendance-toolbar.scss";
+@import "components/app-search.scss";
+@import "components/alert-flags";
+@import "components/prisoner-profile-header";
+@import "components/app-tags";
+
+@import "patterns/horizontal-form";
+@import "patterns/whereabouts-table";
+@import "patterns/app-activity-cards";
+
+@import "unlock-experimental";
+@import "unlock-print";
+
+.form-background {
+  background-color: #f3f2f1;
+}
+
+.app-unlock-list {
+  .moj-filter-layout__filter {
+
+    @include govuk-media-query(desktop) {
+      max-width: 285px;
+      min-width: 260px;
+    }
+  }
+}
+
+.moj-sub-navigation__link {
+  font-weight: bold;
+}
+
+.moj-sub-navigation .moj-sub-navigation__item .moj-sub-navigation__link:hover {
+  color: govuk-tint(govuk-colour("blue"), 30%) !important;
+}
+
+// .app-unlock-list-event {
+//   background: govuk-colour("white");
+//   border: 1px solid govuk-colour("mid-grey");
+//   // box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+//   border-top-width: govuk-spacing(2);
+//   padding: govuk-spacing(2) govuk-spacing(3);
+//   &.app-unlock-list-event--appointment {
+//     border-color: govuk-colour("red");
+//   }
+// }
+
+.movement-slip {
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: dashed;
+  border-right-style: dashed;
+  border-bottom-style: dashed;
+  border-left-style: dashed;
+  border-top-color: rgb(177, 180, 182);
+  border-right-color: rgb(177, 180, 182);
+  border-bottom-color: rgb(177, 180, 182);
+  border-left-color: rgb(177, 180, 182);
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  break-inside: avoid;
+}
+.movement-slip .movement-slip-header {
+  padding-left: 2.5rem;
+  background-image: url("../images/moj-logotype-crest.svg");
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-size: 2rem;
+  background-position-y: 50%;
+}
+.movement-slip__summary {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+p, .govuk-body, .movement-slip__summary__row, .govuk-body-m {
+  color: rgb(11, 12, 12);
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.movement-slip__summary__row {
+  display: table-row;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(177, 180, 182);
+}
+.movement-slip__summary__row__key {
+  display: table-cell;
+  width: 30%;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.movement-slip__summary__row__value {
+  display: table-cell;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.alerts-list, .govuk-list {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: rgb(11, 12, 12);
+  margin-top: 0px;
+  margin-bottom: 15px;
+  padding-left: 0px;
+  list-style-type: none;
+}
+.govuk-list {
+  margin-bottom: 0px;
+}
+.alerts-list > li, .govuk-list > li {
+  margin-bottom: 5px;
+}
+.preserve-line-breaks {
+  white-space: pre-line;
+}
+.govuk-body-s {
+  color: rgb(11, 12, 12);
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.14286;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.movement-slip .movement-slip-footer {
+  text-align: right;
+  color: rgb(80, 90, 95);
+  margin-bottom: 0px;
+}
+
+.float-right {
+  float: right;
+}

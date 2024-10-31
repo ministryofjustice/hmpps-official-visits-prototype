@@ -1,19 +1,249 @@
-{% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Official visits prototype
+{% endblock %}
+
+{% block header %}
+{% set page = "appointments" %}
+
+{% include "includes/proto-header.html" %}
+
+<div class="app-masthead">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="app-masthead__title govuk-heading-l govuk-!-margin-bottom-3">
+          Official visits
+        </h1>
+        <h3 class="app-masthead__subtitle govuk-heading-m">A service within Digital Prison Services for prison staff to manage official vists.
+        </h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
 
 {% block content %}
 
+
+
+
+<div class="govuk-!-margin-bottom-6">
+  <h2 class="govuk-heading-m">
+    Supporting documentation
+  </h2> 
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="#" target="_blank" class="govuk-link govuk-link--no-visited-state">...</a></li> 
+  </ul> 
+</div>
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full"> 
+     
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    <h2 class="govuk-heading-l">
+      Prototype versions
+    </h2> 
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+    
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+      <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="version-9">
+                  Version 1
+                  <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                      For research
+                      </strong> -->
+                      <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                          In Design
+                      </strong>
+              </span>
+              </h2>
+          </div> 
+          <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">  
+                <form action="post">
+                  <div class="govuk-button-group"> 
+                    {{govukButton({
+                        text: "Launch from DPS homepage",
+                        attributes: {
+                        "formaction": "v1/DPS-home-main",
+                        "formmethod": "get"
+                        },
+                        classes: "govuk-button--secondary"
+                        })}}
+ 
+                  </div>
+                </form>
+              </div>
+              
+            
+              <div class="govuk-grid-column-three-quarters"> 
+                  <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                  <ul class="govuk-list govuk-list--number">
+                      <li>...</li>    
+                  </ul> 
+
+
+                  <h4 class="govuk-heading-m">Supporting documents</h4>
+                  <ul class="govuk-list">
+                      <li><a class="govuk-link" target="external" href="...">...</a></li>   
+                  </ul> 
+
+                  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                  <h4 class="govuk-heading-m">1. </h4> 
+                  <p class="govuk-body">..</p> 
+                  <ul class="govuk-list"> 
+                      <li><a class="govuk-link" target="external" href="...">...</a></li>    
+                  </ul>    
+              </div> 
+
+            </div>
+          </div>
+        </div> 
+      <!-- <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="version-9">
+                Version 12.1
+                <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                    For research
+                    </strong>
+                    <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                        In Design
+                    </strong>
+            </span>
+            </h2>
+        </div> 
+        <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">  
+                </div>
+                
+                
+
+        
+                    <div class="govuk-grid-column-three-quarters"> 
+                        <h4 class="govuk-heading-m">What we are testing</h4> 
+                        <p class="govuk-body">This remote round of UR is due to take place in wc 1st October 2024.</p> 
+                        <p class="govuk-body">In this round, we aim to:</p> 
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>Validate our improvements to the core designs of recording a recall</li> 
+                            <li>Testing our iterations on view and edit a recall having been put in it's own tab</li> 
+                            <li>Testing some scenarios with more complex sentencing information </li> 
+                        </ul>   
+                        <h4 class="govuk-heading-m">Supporting documents</h4>
+                        <ul class="govuk-list"> 
+                            <li><a class="govuk-link" target="external" href="https://docs.google.com/document/d/19Zrkhz1V87Ndz4B9CGs9eeDQWHExDg8goORkF2s7kF0/edit?tab=t.0">R5 mock scenario (docs)</a></li>   
+                            <li><a class="govuk-link" target="external" href="https://docs.google.com/document/d/1iPpJHcfcyYxoieg8UjzSAlIPcxyJagHGT9e6pyyealQ/edit?tab=t.0#heading=h.y1kyip8kz10d">R5 discussion guide (docs)</a></li>    
+                     
+                        </ul> 
+
+                        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+                        <form action="post">
+                        <h4 class="govuk-heading-m">Scenario 1</h4>
+                        <p class="govuk-hint">Recording a recall</p>
+
+                        {{govukButton({
+                            text: "Launch scenario 1",
+                            attributes: {
+                            "formaction": "v12_1/DPS-prisoner-profile?scenario=2",
+                            "formmethod": "post"
+                            },
+                            classes: "govuk-button--secondary"
+                            })}}
+                        <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey). This scenario includes a new entry point for all recall journeys on it own tab.</p> 
+                        
+                        </form>  
+
+
+                    </div>
+                      
+        </div>
+    </div>
+      </div>
+      <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="version-9">
+                  Version 12
+                  
+                  <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                      In Design
+                  </strong>
+              </span>
+              </h2>
+          </div> 
+          <div id="" class="govuk-accordion__section-content" aria-labelledby="version-10">
+              <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">  
+                  <form action="post">
+                      <div class="govuk-button-group"> 
+                      
+                          {{govukButton({
+                              text: "Launch from DPS homepage",
+                              attributes: {
+                              "formaction": "v12/DPS-home?viewOption=adjustmentsReleasedTrue",
+                              "formmethod": "get"
+                              },
+                              classes: "govuk-button--secondary"
+                              })}}
+
+                          {{govukButton({
+                              text: "Launch from prisoner profile",
+                              attributes: {
+                              "formaction": "v12/DPS-prisoner-profile?viewOption=adjustmentsReleasedTrue",
+                              "formmethod": "post"
+                              },
+                              classes: "govuk-button--secondary"
+                              })}}
+
+                      </div>
+                  </form>
+                  </div>
+                  
+                
+                  <div class="govuk-grid-column-three-quarters"> 
+                      <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                      <ul class="govuk-list govuk-list--number">
+                          <li>Post-R4 improvements</li>     
+                          <li>CRDS manual entry improvements</li>     
+                          <li>Logic for editing UAL</li>         
+                          <li>Unhappy paths</li>       
+                      </ul> 
+
+
+                      <h4 class="govuk-heading-m">Supporting documents</h4>
+                      <ul class="govuk-list">
+                          <li><a class="govuk-link" target="external" href="https://docs.google.com/presentation/d/1xjwYbX2-3kfuMPlEiXNqAtR6XlE2DMXbpNiA_Dx1wks/edit#slide=id.g2ebc4771840_0_406">R4 Playback (Google Sheets)</a></li>     
+                          <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764604128735594&cot=14">R4 Ideation (miro)</a></li>     
+                      </ul> 
+
+                      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                      <h4 class="govuk-heading-m">1. Post-R4 improvements</h4> 
+                      <p class="govuk-body">..</p> 
+                      <ul class="govuk-list"> 
+                          <li><a class="govuk-link" target="external" href="v12/overview4">Recalls action combined with recalls section</a></li>    
+                      </ul>    
+                  </div> 
+
+              </div>
+          </div>
+      </div> -->
+       
+    </div>   
   </div>
 </div>
 
