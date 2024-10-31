@@ -49,4 +49,15 @@ router.use(/\/appointments\/tickets-for-dev\/designs/, (req, res, next) => {
 })
 
 
+
+router.post(`/add-people-route`, function (req, res) {
+	const peopleRoute = req.session.data['add-people-method'];
+	if (peopleRoute === 'upload-file') {
+		res.redirect(`v1/create-appointment/upload-file-info`);
+	} else {
+		res.redirect(`v1/create-appointment/search-person`);
+	}
+  });
+
+
 module.exports = router
