@@ -60,4 +60,38 @@ router.post(`/add-people-route`, function (req, res) {
   });
 
 
+  router.post(`/FRD-route`, function (req, res) {
+	const peopleRoute = req.session.data['FRD-tier'];
+	if (peopleRoute === 'Tier 2') {
+		res.redirect(`v1/create-appointment/provider`);
+	} else {
+		res.redirect(`v1/create-appointment/location`);
+	}
+  });
+
+
+  router.post(`/FRD-route`, function (req, res) {
+	  const peopleRoute = req.session.data['FRD-tier'];
+	  if (peopleRoute === 'Tier 2') {
+		  res.redirect(`v1/create-appointment/provider`);
+	  } else {
+		  res.redirect(`v1/create-appointment/location`);
+	  }
+	});
+
+
+	router.post(`/appointment-repeat-question`, function (req, res) {
+		const appRepeat = req.session.data['appointment-repeat'];
+		if (appRepeat === 'Yes') {
+			res.redirect(`v1/create-appointment/appointment-frequency`);
+		} else {
+			res.redirect(`v1/create-appointment/clashes`);
+		}
+	  });
+
+
+
+
+
+
 module.exports = router
