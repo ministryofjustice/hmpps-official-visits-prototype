@@ -1,0 +1,141 @@
+{% extends "layout_hmpps-no-nav.html" %}
+{% set serviceName = "Appointments" %}
+
+{% block pageTitle %}
+Official visits prototype
+{% endblock %}
+
+{% block primaryNavigation %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}} 
+  <a href="../dps-home.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+    Go to all appointments tasks
+  </a>
+</nav>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Schedule an appointment</span>
+          Add social contacts (optional)
+        </h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+          
+ 
+        <div>
+          <div style="float: left;">
+              {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+              {{ govukInput({
+                value: " ",
+                label: {
+                text: "Search by name",
+                classes: "",
+                isPageHeading: false
+                }, 
+              classes: "govuk-input--width-20", 
+              id: "prisoner-search-query", 
+              name: "prisoner-search-query"
+              }) }}
+          </div>
+
+            <button class="govuk-button govuk-button--secondary"  style="margin-top: 30px; margin-left: 10px;">Search</button>
+          </div>
+
+          <div><h2 class="govuk-heading-m" style="clear: both;">There are 3 social contacts for this person</h2></div>
+
+          <table class="govuk-table app-whereabouts-table--sticky-head" data-module="moj-sortable-table">
+            <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
+                Prisoners
+            </caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0"></button>Name</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1"></button>Date of birth</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2"></button>Address</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3"></button>Relationship to prisoner</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3"></button>Emergency contact</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3"></button>Next of kin</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3"></button>Approved</th>
+                </tr>
+            </thead> 
+
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="selected-prisoner-EN2245U" name="new-application[selected-prisoner]" type="radio" value="EN2245U">
+                            <label class="govuk-label govuk-radios__label" for="selected-prisoner-EN2245U">
+                              <b>Townsend, Arthur</b>
+                            </label>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">1 July 1948 <br> (76 years old)</td>
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell">Grandfather</td>
+                    <td class="govuk-table__cell">Yes</td>
+                    <td class="govuk-table__cell">Yes</td>
+                    <td class="govuk-table__cell">Yes</td>
+                </tr> 
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="selected-prisoner-EN2245U" name="new-application[selected-prisoner]" type="radio" value="EN2245U">
+                            <label class="govuk-label govuk-radios__label" for="selected-prisoner-EN2245U">
+                              <b>Smith, Julian</b>
+                            </label>
+                        </div>
+                      </div>
+                    </td> 
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">7 Corporation Street <br> Manchester<br>England</td>
+                    <td class="govuk-table__cell">Friend</td>
+                    <td class="govuk-table__cell">No</td>
+                    <td class="govuk-table__cell">No</td>
+                    <td class="govuk-table__cell">Yes</td>
+                </tr> 
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="selected-prisoner-EN2245U" name="new-application[selected-prisoner]" type="radio" value="EN2245U">
+                            <label class="govuk-label govuk-radios__label" for="selected-prisoner-EN2245U">
+                              <b>Jordan, Alison</b>
+                            </label>
+                        </div>
+                      </div>
+                    </td> 
+                    <td class="govuk-table__cell">11 August 1986 <br> (38 years old)</td>
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell">Friend</td>
+                    <td class="govuk-table__cell">No</td>
+                    <td class="govuk-table__cell">No</td>
+                    <td class="govuk-table__cell">No</td>
+                </tr> 
+            </tbody>
+        </table>
+
+        <form method="post" action="add-social-contacts?socialContactsAdded=yes">
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+          Continue
+          </button> 
+      </div>
+ 
+    </div>
+  </div> 
+</form>
+{% endblock %}

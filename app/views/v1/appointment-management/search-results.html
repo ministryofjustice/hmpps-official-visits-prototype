@@ -287,6 +287,8 @@ Official visits prototype
 									<option value="Medical - Psy">Medical - Psy</option>
 									
 									<option value="Medical - X-Ray">Medical - X-Ray</option>
+
+									<option value="Official visit">Official visit</option>
 									
 									<option value="OMU Appointment">OMU Appointment</option>
 									
@@ -405,6 +407,8 @@ Official visits prototype
 									<option value="Medical - Psy">Medical - Psy</option>
 									
 									<option value="Medical - X-Ray">Medical - X-Ray</option>
+
+									<option value="Official visit">Official visit</option>
 									
 									<option value="OMU Appointment">OMU Appointment</option>
 									
@@ -524,6 +528,8 @@ Official visits prototype
 									<option value="Medical - Psy">Medical - Psy</option>
 									
 									<option value="Medical - X-Ray">Medical - X-Ray</option>
+
+									<option value="Official visit">Official visit</option>
 									
 									<option value="OMU Appointment">OMU Appointment</option>
 									
@@ -644,6 +650,8 @@ Official visits prototype
 									<option value="Medical - Psy">Medical - Psy</option>
 									
 									<option value="Medical - X-Ray">Medical - X-Ray</option>
+
+									<option value="Official visit">Official visit</option>
 									
 									<option value="OMU Appointment">OMU Appointment</option>
 									
@@ -763,6 +771,8 @@ Official visits prototype
 									<option value="Medical - Psy">Medical - Psy</option>
 									
 									<option value="Medical - X-Ray">Medical - X-Ray</option>
+
+									<option value="Official visit">Official visit</option>
 									
 									<option value="OMU Appointment">OMU Appointment</option>
 									
@@ -804,7 +814,7 @@ Official visits prototype
 	
 							{% endif %}
 
-						{% if data['appointment-location-fltr'] == 'Medical Room 1' %}
+						{% if data['appointment-location-fltr'] == 'Meeting room 1' %}
 						<!-- Location MOJ autocomplete component - HTML -->
 						<div class="govuk-form-group">
 							<label class="govuk-label govuk-label--s" for="sort">
@@ -824,7 +834,7 @@ Official visits prototype
 								<option value="Kitchen">Kitchen</option>
 								<option value="Laundry Room">Laundry Room</option>
 								<option value="Library">Library</option>
-								<option value="Medical Room 1" selected>Medical Room 1</option> 
+								<option value="Meeting room 1" selected>Meeting room 1</option> 
 								<option value="Medical Room 2">Medical Room 2</option> 
 								<option value="Music Room">Music Room</option>
 								<option value="Office">Office</option>
@@ -858,7 +868,7 @@ Official visits prototype
 								<option value="Kitchen">Kitchen</option>
 								<option value="Laundry Room">Laundry Room</option>
 								<option value="Library">Library</option>
-								<option value="Medical Room 1">Medical Room 1</option> 
+								<option value="Meeting room 1">Meeting room 1</option> 
 								<option value="Medical Room 2">Medical Room 2</option> 
 								<option value="Music Room">Music Room</option>
 								<option value="Office">Office</option>
@@ -891,7 +901,7 @@ Official visits prototype
 								<option value="Kitchen">Kitchen</option>
 								<option value="Laundry Room">Laundry Room</option>
 								<option value="Library">Library</option>
-								<option value="Medical Room 1">Medical Room 1</option> 
+								<option value="Meeting room 1">Meeting room 1</option> 
 								<option value="Medical Room 2" selected>Medical Room 2</option> 
 								<option value="Music Room">Music Room</option>
 								<option value="Office">Office</option>
@@ -923,7 +933,7 @@ Official visits prototype
 								<option value="Kitchen">Kitchen</option>
 								<option value="Laundry Room">Laundry Room</option>
 								<option value="Library">Library</option>
-								<option value="Medical Room 1">Medical Room 1</option> 
+								<option value="Meeting room 1">Meeting room 1</option> 
 								<option value="Medical Room 2">Medical Room 2</option> 
 								<option value="Music Room">Music Room</option>
 								<option value="Office">Office</option>
@@ -1002,7 +1012,7 @@ Official visits prototype
 
 			<div class="moj-action__filter"></div>
 
-			{% if data['appointment-type-fltr'] == 'Blood test' or data['appointment-type-fltr'] == 'Medical - Doctor' and data['appointment-location-fltr'] == 'Medical Room 1' %}
+			{% if data['appointment-type-fltr'] == 'Blood test' or data['appointment-type-fltr'] == 'Medical - Doctor' and data['appointment-location-fltr'] == 'Meeting room 1' %}
 			<h2 class="govuk-heading-s">
 				Showing 8 appointments
 			</h2>
@@ -1050,7 +1060,7 @@ Official visits prototype
 				<thead class="govuk-table__head">
 					<tr class="govuk-table__row"> 
 						<!-- <th class="govuk-table__header" scope="col">Date</th> -->
-						<th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending"><button type="button" data-index="1"></button>Time</th>
+						 <th class="govuk-table__header" style="width:13%" scope="col" aria-sort="ascending"><button type="button" data-index="1"></button>Time</th>
 						<th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Appointment name</th>
 						<th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Location</th>
 						<th class="govuk-table__header" scope="col" aria-sort="none"><button type="button" data-index="0"></button>Attendees</th> 
@@ -1059,751 +1069,7 @@ Official visits prototype
 					</tr>
 				</thead>
 				<tbody class="govuk-table__body">
-					{% if data['appointment-prisoner-name'] == 'B9295C' %}
-				
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">11:15 to 11:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell"><a href="#" class="govuk-link">Eric Sykes</a><br>B9295C<br>1-4-5</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="../appointment-management/appointment-summary/individual/uploaded-in-bulk" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row "> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">
-							{{ data['start-hours']}}:{{ data['start-minutes']}} to {{ data['end-hours']}}:{{ data['end-minutes']}}  </td>
-						<td class="govuk-table__cell">{% if data['alt-appointment-name'] !='' %}
-
-							{{ data['alt-appointment-name']}} ({{ data['apppointment-type']}})
-			  
-							{% else %}
-							
-							{{ data['apppointment-type']}}
-							{% endif %}</td>
-						<td class="govuk-table__cell">{{ data['apppointment-location']}}</td>
-						<td class="govuk-table__cell">6</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 6</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="appointment-summary/repeating/summary" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					{% elif data['appointment-prisoner-name'] == 'G2044E' %}
-				
-					<tr class="govuk-table__row"> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">9:00 to 9:15</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell "><a href="#" class="govuk-link"> Amby Abraham</a><br>G2044E <br>1-2-33 </td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="../appointment-management/appointment-summary/uploaded-in-bulk/amby" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-
-
-					<tr class="govuk-table__row "> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">
-							{{ data['start-hours']}}:{{ data['start-minutes']}} to {{ data['end-hours']}}:{{ data['end-minutes']}}  </td>
-						<td class="govuk-table__cell">{% if data['alt-appointment-name'] !='' %}
-
-							{{ data['alt-appointment-name']}} ({{ data['apppointment-type']}})
-			  
-							{% else %}
-							
-							{{ data['apppointment-type']}}
-							{% endif %}</td>
-						<td class="govuk-table__cell">{{ data['apppointment-location']}}</td>
-						<td class="govuk-table__cell">6</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 6</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="appointment-summary/repeating/summary" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					{% elif data['appointment-prisoner-name'] == 'C2598E' %}
-				
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">9:15 to 9:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell"><a href="#" class="govuk-link">Bert Hungerford</a><br>C2598E<br>1-3-44 </td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="../appointment-management/appointment-summary/uploaded-in-bulk/bert" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row "> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">
-							{{ data['start-hours']}}:{{ data['start-minutes']}} to {{ data['end-hours']}}:{{ data['end-minutes']}}  </td>
-						<td class="govuk-table__cell">{% if data['alt-appointment-name'] !='' %}
-
-							{{ data['alt-appointment-name']}} ({{ data['apppointment-type']}})
-			  
-							{% else %}
-							
-							{{ data['apppointment-type']}}
-							{% endif %}</td>
-						<td class="govuk-table__cell">{{ data['apppointment-location']}}</td>
-						<td class="govuk-table__cell">6</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 6</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="appointment-summary/repeating/summary" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-
-					{% elif data['appointment-location-fltr'] == 'Medical Room 1' or data['appointment-type-fltr'] == 'Blood test' or data['appointment-type-fltr'] == 'Medical - Doctor' and data['appointment-location-fltr'] == 'Medical Room 1'  %}
-					
-					<tr class="govuk-table__row"> 
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:00 to 9:15</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Wade Brumbie</a><br>B4942H<br>1-5-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="../appointment-management/appointment-summary/uploaded-in-bulk/wade" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:15 to 9:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Torey Girling</a><br>X5323Z<br>1-8-5</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:30 to 9:45</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Donalt Cormack</a><br>A3888V<br>5-4-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:45 to 10:00</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Ignatius Haresnape</a><br>S5135F<br>6-4-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:00 to 10:15</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Flemming Brandel</a><br>H0687K<br>1-4-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:15 to 10:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Devlin Walas</a><br>H0078J<br>1-4-0</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="appointment-summary/individual/uploaded-in-bulk.html" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:30 to 10:45</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Keith Ambrois</a><br>L1214R<br>8-4-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-		
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">11:15 to 11:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Laurens Heijnen</a><br>T9955W<br>1-2-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="../appointment-management/appointment-summary/individual/uploaded-in-bulk" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-
-					{% elif data['appointment-location-fltr'] == 'Medical Room 2' or data['appointment-type-fltr'] == 'Medical - Doctor' and data['appointment-location-fltr'] == 'Medical Room 2' %}
-
-						
-					<tr class="govuk-table__row"> 
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:00 to 9:15</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="" class="govuk-link">Archer Alebeter</a><br>A4962H<br>1-3-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="../appointment-management/appointment-summary/uploaded-in-bulk/archer" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:15 to 9:30</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Dan Crips</a><br>Y6954Z<br>2-8-5</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:30 to 9:45</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Harper Jean</a><br>A4820F<br>12-6-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:45 to 10:00</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Ralph Morten</a><br>Y5435F<br>2-1-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:00 to 10:15</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Nicholas Flemel</a><br>J94287K<br>2-4-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:45 to 11:00</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell"><a href="#" class="govuk-link">Luther Drove</a><br>E2405E<br>2-2-2</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">11:00 to 11:15</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell"><a href="#" class="govuk-link">Grant Kittel</a><br>O9555U<br>2-4-5</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-				
-					{% elif data['appointment-type-fltr'] == 'Medical - Doctor'  %}
-				
-						
-					<tr class="govuk-table__row"> 
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:00 to 9:15</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Wade Brumbie</a><br>B4942H<br>1-5-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="../appointment-management/appointment-summary/uploaded-in-bulk/wade" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-						
-					<tr class="govuk-table__row"> 
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:00 to 9:15</td>
-						<td class="govuk-table__cell"> Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="" class="govuk-link">Archer Alebeter</a><br>A4962H<br>1-3-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="../appointment-management/appointment-summary/uploaded-in-bulk/archer" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:15 to 9:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Torey Girling</a><br>X5323Z<br>1-8-5</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:15 to 9:30</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Dan Crips</a><br>Y6954Z<br>2-8-5</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:30 to 9:45</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Donalt Cormack</a><br>A3888V<br>5-4-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:30 to 9:45</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Harper Jean</a><br>A4820F<br>12-6-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:45 to 10:00</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Ignatius Haresnape</a><br>S5135F<br>6-4-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">9:45 to 10:00</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Ralph Morten</a><br>Y5435F<br>2-1-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:00 to 10:15</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Flemming Brandel</a><br>H0687K<br>1-4-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:00 to 10:15</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Nicholas Flemel</a><br>J94287K<br>2-4-1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:15 to 10:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Devlin Walas</a><br>H0078J<br>1-4-0</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="appointment-summary/individual/uploaded-in-bulk.html" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:30 to 10:45</td>
-						<td class="govuk-table__cell">{% if data['alt-appointment-name-bulk'] !='' %}
-
-							{{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-			
-							{% else %}
-							
-							{{ data['apppointment-type-bulk']}}
-							{% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Keith Ambrois</a><br>L1214R<br>8-4-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">10:45 to 11:00</td>
-						<td class="govuk-table__cell"> Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell"><a href="#" class="govuk-link">Luther Drove</a><br>E2405E<br>2-2-2</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">11:00 to 11:15</td>
-						<td class="govuk-table__cell">Medical - Doctor</td>
-						<td class="govuk-table__cell">Medical room 2</td>
-						<td class="govuk-table__cell"><a href="#" class="govuk-link">Grant Kittel</a><br>O9555U<br>2-4-5</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-					<tr class="govuk-table__row ">
-						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
-						<td class="govuk-table__cell">11:15 to 11:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Laurens Heijnen</a><br>T9955W<br>1-2-5</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<!-- <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-1">Created by CSV upload</strong><br> -->
-							<a href="../appointment-management/appointment-summary/individual/uploaded-in-bulk" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-
-					{% elif data['appointment-type-fltr'] == 'Programme appointment' %}
-
-					<tr class="govuk-table__row "> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">
-							{{ data['start-hours']}}:{{ data['start-minutes']}} to {{ data['end-hours']}}:{{ data['end-minutes']}}  </td>
-						<td class="govuk-table__cell">{% if data['alt-appointment-name'] !='' %}
-
-							{{ data['alt-appointment-name']}} ({{ data['apppointment-type']}})
-			  
-							{% else %}
-							
-							{{ data['apppointment-type']}}
-							{% endif %}</td>
-						<td class="govuk-table__cell">{{ data['apppointment-location']}}</td>
-						<td class="govuk-table__cell">6</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">4 of 6</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="appointment-summary/repeating/summary-4" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-
-					<tr class="govuk-table__row">  
-						<td class="govuk-table__cell">9:30 to 10:30</td>
-						<td class="govuk-table__cell">Steps to work (programme)</td>
-						<td class="govuk-table__cell">Classroom 2</td>
-						<td class="govuk-table__cell">20</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">5 of 20</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-
-					{% elif data['appointment-type-fltr'] == 'The Bridge' %}
-
-
-					<tr class="govuk-table__row "> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">
-							{{ data['start-hours']}}:{{ data['start-minutes']}} to {{ data['end-hours']}}:{{ data['end-minutes']}}  </td>
-						<td class="govuk-table__cell">{% if data['alt-appointment-name'] !='' %}
-
-							{{ data['alt-appointment-name']}} ({{ data['apppointment-type']}})
-			  
-							{% else %}
-							
-							{{ data['apppointment-type']}}
-							{% endif %}</td>
-						<td class="govuk-table__cell">{{ data['apppointment-location']}}</td>
-						<td class="govuk-table__cell">6</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">4 of 6</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="appointment-summary/repeating/summary-4" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					{% elif data['appointment-location-fltr'] == 'Classroom 2' %}
-
-					<tr class="govuk-table__row "> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">
-							{{ data['start-hours']}}:{{ data['start-minutes']}} to {{ data['end-hours']}}:{{ data['end-minutes']}}  </td>
-						<td class="govuk-table__cell">{% if data['alt-appointment-name'] !='' %}
-
-							{{ data['alt-appointment-name']}} ({{ data['apppointment-type']}})
-			  
-							{% else %}
-							
-							{{ data['apppointment-type']}}
-							{% endif %}</td>
-						<td class="govuk-table__cell">{{ data['apppointment-location']}}</td>
-						<td class="govuk-table__cell">6</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">4 of 6</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="appointment-summary/repeating/summary-4" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					<tr class="govuk-table__row ">  
-						<td class="govuk-table__cell">10:00 to 11:00</td>
-						<td class="govuk-table__cell">Job Centre Plus</td>
-						<td class="govuk-table__cell">Classroom 2</td>
-						<td class="govuk-table__cell">12</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">2 of 12</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr> 
-
-					<tr class="govuk-table__row "> 
-						<!-- <td class="govuk-table__cell">26 June 2023</td> -->
-						<td class="govuk-table__cell">10:30 to 12:00</td>
-						<td class="govuk-table__cell">Case - Baile Apps</td>
-						<td class="govuk-table__cell">Classroom 2</td>
-						<td class="govuk-table__cell"><a href="#" class="govuk-link">Amby Abraham</a><br>G2044E <br>1-2-33</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">4 of 9</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="appointment-summary/repeating/bert.html" class="govuk-link">Manage details</a>
-						</td>
-					</tr> 
-
-					<tr class="govuk-table__row">  
-						<td class="govuk-table__cell">12:30 to 13:30</td>
-						<td class="govuk-table__cell">Education</td>
-						<td class="govuk-table__cell">Classroom 2</td>
-						<td class="govuk-table__cell">20</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">5 of 20</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr> 
-
-					<tr class="govuk-table__row ">  
-						<td class="govuk-table__cell">14:30 to 15:30</td>
-						<td class="govuk-table__cell">Case - Baile Apps</td>
-						<td class="govuk-table__cell">Classroom 2</td>
-						<td class="govuk-table__cell">20</td> 
-						<td class="govuk-table__cell govuk-table__cell--numeric">4 of 9</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="#" class="govuk-link">Manage details</a>
-						</td>
-					</tr>
-
-					{% else %}
+				 
 		
 					<tr class="govuk-table__row ">  
 						<td class="govuk-table__cell">8:30 to 9:30</td>
@@ -1826,24 +1092,16 @@ Official visits prototype
 							<a href="#" class="govuk-link">Manage details</a>
 						</td>
 					</tr> 
-				
-					<t	
+				 	
 					<tr class="govuk-table__row"> 
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">9:00 to 9:15</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
-						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Wade Brumbie</a><br>B4942H<br>1-5-5</td>
+						<td class="govuk-table__cell">{{ data['apppointment-type']}} </td>
+						<td class="govuk-table__cell">Meeting room 1</td>
+						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Neil Rudge</a><br>EN2245U<br>1-2-2</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
-							<a href="../appointment-management/appointment-summary/uploaded-in-bulk/wade" class="govuk-link">Manage details</a>
+							<a href="summary-official-visit" class="govuk-link">Manage details</a>
 						</td>
 					</tr>
 						
@@ -1897,7 +1155,7 @@ Official visits prototype
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">9:00 to 12:00</td>
 						<td class="govuk-table__cell">Case - Substance misuse services</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
+						<td class="govuk-table__cell">Meeting room 1</td>
 						<td class="govuk-table__cell">6</td> 
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 6</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
@@ -1908,15 +1166,8 @@ Official visits prototype
 					<tr class="govuk-table__row ">
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">9:15 to 9:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
+						<td class="govuk-table__cell">{{ data['apppointment-type']}} </td>
+						<td class="govuk-table__cell">Meeting room 1</td>
 						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Torey Girling</a><br>X5323Z<br>1-8-5</td> 
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
@@ -1941,15 +1192,8 @@ Official visits prototype
 					<tr class="govuk-table__row ">
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">9:30 to 9:45</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
+						<td class="govuk-table__cell"> {{ data['apppointment-type']}} </td>
+						<td class="govuk-table__cell">Meeting room 1</td>
 						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Donalt Cormack</a><br>A3888V<br>5-4-5</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
@@ -1984,15 +1228,8 @@ Official visits prototype
 					<tr class="govuk-table__row ">
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">9:45 to 10:00</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
+						<td class="govuk-table__cell">{{ data['apppointment-type']}} </td>
+						<td class="govuk-table__cell">Meeting room 1</td>
 						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Ignatius Haresnape</a><br>S5135F<br>6-4-1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
@@ -2017,15 +1254,8 @@ Official visits prototype
 					<tr class="govuk-table__row ">
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">10:00 to 10:15</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
+						<td class="govuk-table__cell">{{ data['apppointment-type']}} </td>
+						<td class="govuk-table__cell">Meeting room 1</td>
 						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Flemming Brandel</a><br>H0687K<br>1-4-1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
@@ -2073,15 +1303,8 @@ Official visits prototype
 					<tr class="govuk-table__row ">
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">10:30 to 10:45</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
+						<td class="govuk-table__cell">{{ data['apppointment-type']}} </td>
+						<td class="govuk-table__cell">Meeting room 1</td>
 						<td class="govuk-table__cell"><a href="#" class="govuk-link">Fuentes Rasmussen</a><br>E2405E<br>1-3-2</td> 
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
@@ -2149,15 +1372,8 @@ Official visits prototype
 					<tr class="govuk-table__row ">
 						<!-- <td class="govuk-table__cell">28 June 2023</td> -->
 						<td class="govuk-table__cell">11:15 to 11:30</td>
-						<td class="govuk-table__cell"> {% if data['alt-appointment-name-bulk'] !='' %}
-
-                  {{ data['alt-appointment-name-bulk']}} ({{ data['apppointment-type-bulk']}})
-  
-                  {% else %}
-                  
-                  {{ data['apppointment-type-bulk']}}
-                  {% endif %}</td>
-						<td class="govuk-table__cell">Medical Room 1</td>
+						<td class="govuk-table__cell"> {{ data['apppointment-type']}} </td>
+						<td class="govuk-table__cell">Meeting room 1</td>
 						<td class="govuk-table__cell  "><a href="#" class="govuk-link">Laurens Heijnen</a><br>T9955W<br>1-2-5</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">1 of 1</td>
 						<td class="govuk-table__cell govuk-table__cell--numeric">
@@ -2256,8 +1472,7 @@ Official visits prototype
 							<a href="#" class="govuk-link">Manage details</a>
 						</td>
 					</tr>
-
-					{% endif %} 
+ 
 
 				</tbody>
 			</table>
