@@ -94,12 +94,11 @@ Official visits prototype
 
 
       </form>
-
       {% elif data['socialContactsAdded'] == 'additional' %} 
 
       <table class="govuk-table app-whereabouts-table--sticky-head" data-module="moj-sortable-table">
         <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
-            Prisoners
+            Social contacts
         </caption>
         <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -156,7 +155,7 @@ Official visits prototype
           {{govukButton({
             text: "Continue",
             attributes: {
-              "formaction": "tier",
+              "formaction": "../../../summary-official-visit",
               "formmethod": "get"
               }
             })}}
@@ -165,7 +164,6 @@ Official visits prototype
 
 
       </form>
-
       {% else %}
       <p class="govuk-body">No social contacts added.</p>
 

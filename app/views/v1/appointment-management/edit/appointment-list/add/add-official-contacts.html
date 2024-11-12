@@ -26,7 +26,7 @@ Official visits prototype
   <div class="govuk-grid-column-two-thirds"> 
       <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Schedule an appointment</span>
-        Add social contacts (optional)
+        Add official contacts
        </h1>
 
   </div>
@@ -35,7 +35,7 @@ Official visits prototype
    <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['socialContactsAdded'] == 'yes' %}
+      {% if data['officalContactsAdded'] == 'yes' %}
 
 
       <table class="govuk-table app-whereabouts-table--sticky-head" data-module="moj-sortable-table">
@@ -45,8 +45,8 @@ Official visits prototype
         <thead class="govuk-table__head">
             <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0"></button>Name</th>
-                <!-- <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1"></button>Date of birth</th> -->
-                <!-- <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2"></button>Address</th> -->
+                <!-- <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1"></button>Date of birth</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2"></button>Address</th> -->
                 <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3"></button>Relationship to prisoner</th> 
                 <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Actions</span></th>
             </tr>
@@ -54,14 +54,14 @@ Official visits prototype
 
         <tbody class="govuk-table__body"> 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"> 
-                <a href="#" class="govuk-link--no-visited-state"><b>Townsend</b>, Arthur</a>
-                <br>
-                <span class="govuk-hint govuk-!-font-size-16">76565</span>
-              </td>
-              <!-- <td class="govuk-table__cell">1 July 1948 <br> (76 years old)</td> -->
-              <!-- <td class="govuk-table__cell"> </td> -->
-              <td class="govuk-table__cell">Grandfather</td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link--no-visited-state"><b>David Bloggs</b>, Joseph</a>
+                   <br>
+                   <span class="govuk-hint govuk-!-font-size-16">12345</span>
+                </td> 
+                <!-- <td class="govuk-table__cell">17 January 1996 <br> (28 years old)</td>
+                <td class="govuk-table__cell">64 Bow Road <br> Glasgow <br> G20 4BT <br> Scotland</td> -->
+                <td class="govuk-table__cell">Family lawyer</td> 
                 <td class="govuk-table__cell"><a href="" class="govuk-link--no-visited-state ">Remove</a></td> 
                 
             </tr> 
@@ -75,7 +75,7 @@ Official visits prototype
             text: "Add another person",
             classes: "govuk-button--secondary",
             attributes: {
-            "formaction": "search-social-contacts",
+            "formaction": "search-official-contacts",
             "formmethod": "get"
             }
             }) }}
@@ -85,7 +85,7 @@ Official visits prototype
           {{govukButton({
             text: "Continue",
             attributes: {
-              "formaction": "tier",
+              "formaction": "add-social-contacts",
               "formmethod": "get"
               }
             })}}
@@ -95,17 +95,16 @@ Official visits prototype
 
       </form>
 
-      {% elif data['socialContactsAdded'] == 'additional' %} 
-
+      {% elif data['officalContactsAdded'] == 'additional' %}
       <table class="govuk-table app-whereabouts-table--sticky-head" data-module="moj-sortable-table">
         <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
-            Prisoners
+            Official contacts
         </caption>
         <thead class="govuk-table__head">
             <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="0"></button>Name</th>
-                <!-- <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1"></button>Date of birth</th> -->
-                <!-- <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2"></button>Address</th> -->
+                <!-- <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1"></button>Date of birth</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="2"></button>Address</th> -->
                 <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="3"></button>Relationship to prisoner</th> 
                 <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Actions</span></th>
             </tr>
@@ -113,26 +112,26 @@ Official visits prototype
 
         <tbody class="govuk-table__body"> 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"> 
-                <a href="#" class="govuk-link--no-visited-state"><b>Townsend</b>, Arthur</a>
-                <br>
-                <span class="govuk-hint govuk-!-font-size-16">76565</span>
-              </td>
-              <!-- <td class="govuk-table__cell">1 July 1948 <br> (76 years old)</td> -->
-              <!-- <td class="govuk-table__cell"> </td> -->
-              <td class="govuk-table__cell">Grandfather</td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link--no-visited-state"><b>David Bloggs</b>, Joseph</a>
+                   <br>
+                   <span class="govuk-hint govuk-!-font-size-16">12345</span>
+                </td> 
+                <!-- <td class="govuk-table__cell">17 January 1996 <br> (28 years old)</td>
+                <td class="govuk-table__cell">64 Bow Road <br> Glasgow <br> G20 4BT <br> Scotland</td> -->
+                <td class="govuk-table__cell">Family lawyer</td> 
                 <td class="govuk-table__cell"><a href="" class="govuk-link--no-visited-state ">Remove</a></td> 
                 
             </tr> 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"> 
-                <a href="#" class="govuk-link--no-visited-state"><b>Jordan</b>, Alison</a>
-                <br>
-                <span class="govuk-hint govuk-!-font-size-16">56341</span>
-              </td>
-              <!-- <td class="govuk-table__cell">1 July 1948 <br> (76 years old)</td> -->
-              <!-- <td class="govuk-table__cell"> </td> -->
-              <td class="govuk-table__cell">Friend</td>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link--no-visited-state"><b>Adams</b>, Claire</a>
+                   <br>
+                   <span class="govuk-hint govuk-!-font-size-16">98767</span>
+                </td> 
+                <!-- <td class="govuk-table__cell">17 January 1996 <br> (28 years old)</td>
+                <td class="govuk-table__cell">64 Bow Road <br> Glasgow <br> G20 4BT <br> Scotland</td> -->
+                <td class="govuk-table__cell">Solicitor</td> 
                 <td class="govuk-table__cell"><a href="" class="govuk-link--no-visited-state ">Remove</a></td> 
                 
             </tr> 
@@ -146,7 +145,7 @@ Official visits prototype
             text: "Add another person",
             classes: "govuk-button--secondary",
             attributes: {
-            "formaction": "search-social-contacts",
+            "formaction": "search-official-contacts",
             "formmethod": "get"
             }
             }) }}
@@ -156,7 +155,7 @@ Official visits prototype
           {{govukButton({
             text: "Continue",
             attributes: {
-              "formaction": "tier",
+              "formaction": "../../../summary-official-visit",
               "formmethod": "get"
               }
             })}}
@@ -167,7 +166,7 @@ Official visits prototype
       </form>
 
       {% else %}
-      <p class="govuk-body">No social contacts added.</p>
+      <p class="govuk-body">No official contacts added.</p>
 
       
       <form method="post">
@@ -177,7 +176,7 @@ Official visits prototype
             text: "Add a person",
             classes: "govuk-button--secondary",
             attributes: {
-            "formaction": "search-social-contacts",
+            "formaction": "search-official-contacts",
             "formmethod": "get"
             }
             }) }}
@@ -185,21 +184,8 @@ Official visits prototype
         
       </form>
 
-      <form method="post">
-     
-        <div class="govuk-grid-row govuk-grid-column-full govuk-!-margin-bottom-2">
-          {{ govukButton({
-            text: "Continue",
-            classes: "govuk-button--primary",
-            attributes: {
-            "formaction": "tier",
-            "formmethod": "get"
-            }
-            }) }}
-        </div>
-        
-      </form>
- 
+      
+      <!-- <p><a class="govuk-link" href="#">Continue without adding official contacts</a></p> -->
       {% endif %}
   
   
