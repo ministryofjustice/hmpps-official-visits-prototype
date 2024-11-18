@@ -1,0 +1,170 @@
+{% extends "layout_hmpps-no-nav.html" %}
+{% set serviceName = "Appointments" %}
+
+{% block pageTitle %}
+Official visits prototype
+{% endblock %}
+
+{% block primaryNavigation %}
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}} 
+  <a href="../dps-home.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+    Go to all appointments tasks
+  </a>
+</nav>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">
+            {% if data['alt-appointment-name'] !='' %}
+    
+            {{ data['alt-appointment-name']}} ({{ data['apppointment-type']}})
+    
+            {% else %}
+            
+            {{ data['apppointment-type']}}
+            {% endif %}</span>
+          Select social contacts from the prisoner’s approved contacts list (optional)
+        </h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+          
+      <p class="govuk-body govuk-!-margin-bottom-6"><b>Prisoner name:</b> Rudge, Neil</p>
+
+      <div class="govuk-summary-card"> 
+        <div class="govuk-summary-card__content">  
+          <table class="govuk-table govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+            <caption class="govuk-table__caption govuk-table__caption--m ">
+              Prisoners active restrictions
+            </caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Type of restriction</th> 
+                    <th scope="col" class="govuk-table__header">Comments</th> 
+                    <th scope="col" class="govuk-table__header">Date from</th> 
+                    <th scope="col" class="govuk-table__header">Date to</th>
+                </tr>
+            </thead> 
+
+            <tbody class="govuk-table__body"> 
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">Closed</strong></td> 
+                  <td class="govuk-table__cell">Closed with Tim Write</td> 
+                  <td class="govuk-table__cell">1 November 2021</td> 
+                  <td class="govuk-table__cell">2 February 2024</td>  
+              </tr>  
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">Restricted</strong></td> 
+                  <td class="govuk-table__cell">Not to contacts Sarah Philips until 03/08/2024</td> 
+                  <td class="govuk-table__cell">12 February 2022</td> 
+                  <td class="govuk-table__cell">Not entered</td>  
+              </tr>  
+            </tbody>
+          </table> 
+        </div>
+      </div> 
+
+          <div><h2 class="govuk-heading-m">Approved social contacts</h2></div>
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">
+                Prisoners
+            </caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" >Add</th>
+                    <th scope="col" class="govuk-table__header" >Name</th>
+                    <th scope="col" class="govuk-table__header" >Date of birth</th>
+                    <th scope="col" class="govuk-table__header" >Relationship to prisoner</th>
+                    <th scope="col" class="govuk-table__header" >Address</th>
+                    <th scope="col" class="govuk-table__header" >Active restrictions</th> 
+                </tr>
+            </thead> 
+
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row"> 
+                    <td class="govuk-table__cell">
+                      <div class="govuk-checkboxes " data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item" style="padding-left: 0px;">
+                            <input class="govuk-checkboxes__input"   id="selected-prisoner-EN2245U" name="new-application[selected-prisoner]" type="checkbox" value="EN2245U" checked>
+                            <label class="govuk-label govuk-checkboxes__label"   for="selected-prisoner-EN2245U">
+                            </label>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <b>Townsend</b>, Arthur
+                      <br>
+                      <span class="govuk-hint govuk-!-font-size-16">76565</span>
+                    <td class="govuk-table__cell">1 July 1948 <br> (76 years old)</td>
+                    <td class="govuk-table__cell">Grandfather</td>
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell">None</td> 
+                </tr> 
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes " data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item" style="padding-left: 0px;">
+                          <input class="govuk-checkboxes__input" id="selected-prisoner-EN2245U" name="new-application[selected-prisoner]" type="checkbox" value="EN2245U">
+                          <label class="govuk-label govuk-checkboxes__label" for="selected-prisoner-EN2245U">
+                          </label>
+                      </div>
+                    </div>
+                  </td>
+                    <td class="govuk-table__cell"> 
+                        <b>Smith</b>, Julian
+                        <br>
+                        <span class="govuk-hint govuk-!-font-size-16">97867</span>
+                    </td> 
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">Friend</td>
+                    <td class="govuk-table__cell">7 Corporation Street <br> Manchester<br>England</td>
+                    <td class="govuk-table__cell">None</td> 
+                </tr> 
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes " data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item" style="padding-left: 0px;">
+                          <input class="govuk-checkboxes__input" id="selected-prisoner-EN2245U" name="new-application[selected-prisoner]" type="checkbox" value="EN2245U">
+                          <label class="govuk-label govuk-checkboxes__label" for="selected-prisoner-EN2245U">
+                          </label>
+                      </div>
+                    </div>
+                  </td>
+                    <td class="govuk-table__cell"> 
+                      <b>Jordan</b>, Alison
+                      <br>
+                      <span class="govuk-hint govuk-!-font-size-16">56341</span>
+                    </td> 
+                    <td class="govuk-table__cell">11 August 1986 <br> (38 years old)</td>
+                    <td class="govuk-table__cell">Friend</td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">None</td> 
+                </tr> 
+            </tbody>
+        </table>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">If you cannot find the contact in the records, you can <a class="govuk-link" href="#">view and add new contacts</a>.</p>
+
+        <form method="post" action="../../../summary-official-visit?socialContactsAdded=additional">
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+          Continue
+          </button> 
+      </div>
+ 
+
+    </div>
+  </div> 
+</form>
+{% endblock %}

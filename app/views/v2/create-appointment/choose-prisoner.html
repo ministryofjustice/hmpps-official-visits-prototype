@@ -1,0 +1,57 @@
+
+{% extends "layout_hmpps-no-nav.html" %}
+{% set serviceName = "Appointments" %}
+
+{% block pageTitle %}
+Official visits prototype
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+{{govukBackLink({
+  text: "Back",
+  "href": "javascript: window.history.go(-1)"
+  })}} 
+  <a href="../dps-home.html" class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right">
+    Go to all appointments tasks
+  </a>
+</nav>
+{% endblock %}
+
+{% block primaryNavigation %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="search-official-contacts">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> 
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">Schedule an appointment</span>
+        Select one attendee for this appointment
+       </h1>
+       <p class="govuk-body">You cannot currently add more than one prisoner to an official visit appointment.</p>
+       <p class="govuk-body">To create an official visit for multiple prisoners, you need to schedule an appointment for each person at the same time.</p>
+       
+        {{ govukRadios({
+          idPrefix: "choose-prisoner",
+          name: "choose-prisoner",
+          items: [
+            {
+              value: "Neil Rudge",
+              text: "Neil Rudge (EN2245U)"
+              
+            },
+            {
+              value: "Mick Kight",
+              text: "Mick Knight (AB1236U)"
+            }
+          ]
+        }) }} 
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+  </div>
+</div>
+</form>
+{% endblock %}

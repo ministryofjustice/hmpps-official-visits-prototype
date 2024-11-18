@@ -38,6 +38,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/alert-flags";
 @import "components/prisoner-profile-header";
 @import "components/app-tags";
+@import "components/dps";
 
 @import "patterns/horizontal-form";
 @import "patterns/whereabouts-table";
@@ -106,9 +107,8 @@ $govuk-assets-path: '/govuk/assets/';
 }
 .movement-slip .movement-slip-header {
   padding-left: 2.5rem;
-  background-image: url("../images/moj-logotype-crest.svg");
-  background-repeat-x: no-repeat;
-  background-repeat-y: no-repeat;
+  background-image: url("../images/moj-logotype-crest.svg"); 
+  background-repeat: no-repeat;
   background-size: 2rem;
   background-position-y: 50%;
 }

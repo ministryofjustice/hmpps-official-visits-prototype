@@ -1,0 +1,81 @@
+{% extends "layout_hmpps-no-nav.html" %} {% set serviceName = "Appointments" %}
+{% block pageTitle %} Official visits prototype {% endblock %} {% block
+primaryNavigation %} {% endblock %} {% block beforeContent %}
+<nav class="govuk-!-display-none-print">
+  {{govukBackLink({ text: "Back", "href": "javascript: window.history.go(-1)"
+  })}}
+  <a
+    href="../dps-home.html"
+    class="govuk-link govuk-link--no-visited-state govuk-!-margin-top-3 govuk-!-margin-bottom-3 float-right"
+  >
+    Go to all appointments tasks
+  </a>
+</nav>
+{% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Schedule an appointment</span>
+      Review 1 person with alerts
+    </h1>
+  </div>
+</div> 
+
+<div class="govuk-inset-text">
+    Check an attendee's prisoner profile for full details on their alerts.
+  </div>
+
+<ul class="govuk-list">
+  <li class="govuk-body">People with alerts: 1</li>
+
+  <li class="govuk-body">People you're adding: 1</li>
+</ul>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          <a class="govuk-link" href="#">Neil Rudge, G2044E</a>
+        </h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#"> Remove attendee </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <div
+          class="govuk-!-margin-bottom-3"
+          style="font-family: GDS Transport, arial, sans-serif"
+        >
+          <li class="DPS-alert-status DPS-alert-status--mappp">ViSOR</li>
+        </div>
+
+        <details
+          class="govuk-details"
+          style="margin-bottom: 0px"
+          data-module="govuk-details"
+        >
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text"> View all 2 alerts </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>MAPPA</li>
+              <li>ViSOR</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <form method="post">
+      <div class="govuk-grid-row govuk-grid-column-full govuk-button-group">
+        {{govukButton({ text: "Continue", attributes: { "formaction":
+        "appointment-name", "formmethod": "get" } })}}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
